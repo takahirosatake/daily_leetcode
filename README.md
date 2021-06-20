@@ -1,6 +1,6 @@
 # leetcode
 
-##　 Frequently used functions
+## Frequently used functions
 
 ### php
 
@@ -9,3 +9,8 @@
 - substr_count(第一引数に指定した文字列,第２引数に検索した値) =>いくつ文字列に含まれているかをカウントする
 - str_split 文字列を分割して配列にする
 - str_replace 指定文字列を特定の文字列に置き換える
+
+### javascript
+
+- Math.max() 関数は、入力引数として与えられた 0 個以上の数値のうち最大の数を返す
+- Math.max(...array1)) スプレッド演算子を用いて配列の最大値を求める
