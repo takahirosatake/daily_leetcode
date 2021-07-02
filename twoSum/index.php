@@ -2,6 +2,8 @@
 $nums = [2, 7, 11, 15];
 $target = 9;
 
+twoSum($nums, $target);
+
 function twoSum($nums, $target)
 {
   $map = [];
@@ -14,5 +16,6 @@ function twoSum($nums, $target)
       return [$i, $map[$complement]];
     }
     $map[$nums[$i]] = $i;
+    var_dump($map);
   }
 }
