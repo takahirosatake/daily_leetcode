@@ -11,16 +11,17 @@ $source = <<<EOL
 8 8 8 1
 8 8 8 2
 EOL;
+
 $lines = explode(PHP_EOL, $source);
 
-
+// print_r($lines);
 $result = [];
 for ($i = 0; $i < $n; $i++) {
   $values = explode(' ', $lines[$i]);
   $key = implode(',', array_slice($values, 0, 3));
   $result[$key] = ($result[$key] ?? 0) + intval($values[3], 10);
 }
-print_r($result);
+// print_r($result);
 /* [1,2,3番目の値] => 4番目の値の合計 の配列を作る
 [
   '1,1,2' => 6,
@@ -30,12 +31,27 @@ print_r($result);
 ]
 */
 
-$result = array_map(function ($key) use ($result) {
-  return array_merge(array_map(function ($v) {
-    return intval($v, 10);
-  }, explode(',', $key)), [$result[$key]]);
-}, array_keys($result));
-print_r($result);
+// $result = array_map(function ($key) use ($result) {
+//   return array_merge(array_map(function ($v) {
+//     return intval($v, 10);
+//   }, explode(',', $key)), [$result[$key]]);
+// }, array_keys($result));
+// print_r($result);
+
+$count = 0;
+foreach ($result as $key => $val) {
+  $array = explode(',', $key);
+  $total[$count] = array_merge($array);
+  array_push($total[$count], $val);
+  $count++;
+}
+
+foreach ($total as $val) {
+  echo $val[0] . "," . $val[1] . "," . $val[2] . "," . $val[3] . "\n";
+}
+
+
+
 /*
 [
   [1, 1, 2, 6],
