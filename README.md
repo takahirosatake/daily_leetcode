@@ -12,6 +12,9 @@
 - substr_count(第一引数に指定した文字列,第２引数に検索した値) =>いくつ文字列に含まれているかをカウントする
 - str_split 文字列を分割して配列にする
 - str_replace 指定文字列を特定の文字列に置き換える
+- array_reduce( $array, function ($x, $y) { $x += $y; return $x; }, 0);
+  初期値に対し配列の各要素を使い関数を適用し結果を返す。
+  array_reduce(配列,関数,初期値)として使う。
 
 ### javascript
 

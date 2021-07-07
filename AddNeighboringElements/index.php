@@ -22,11 +22,15 @@ $A = [1, 3, 5, 7, 8];
 for ($arr = $A; count($arr) > 1;) {
   $arr = array_map(
     function ($a, $b) {
+      echo $a . PHP_EOL;
+      echo $b . PHP_EOL;
       return $a + $b;
     },
     array_slice($arr, 0, -1),
     array_slice($arr, 1)
   );
+
+  break;
 }
 
 print_r($arr);  //=> Array([0] => 79)
